@@ -14,6 +14,12 @@ config/name="juego"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Art/icon.svg"
 
+[layer_names]
+
+2d_physics/layer_1="map"
+2d_physics/layer_2="entities"
+2d_physics/layer_3="attacks"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
