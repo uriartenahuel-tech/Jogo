@@ -37,6 +37,7 @@ func player_animation(movement):
 		$AnimatedSprite2D.flip_h = false
 	elif direction == "left":
 		$AnimatedSprite2D.flip_h = true
+		
 	if movement == 1:
 		$AnimatedSprite2D.play("walk")
 	else:
