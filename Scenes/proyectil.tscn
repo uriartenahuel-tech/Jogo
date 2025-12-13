@@ -1,15 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://nintahxjf5b2"]
 
-[ext_resource type="Texture2D" uid="uid://u6gdg7as74s4" path="res://armaEnemigo.png" id="1_5dgrw"]
+[ext_resource type="Texture2D" uid="uid://u6gdg7as74s4" path="res://Art/armaEnemigo.png" id="1_5dgrw"]
 [ext_resource type="Script" uid="uid://ce867g2nao6ix" path="res://Scripts/proyectil.gd" id="1_iptn0"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mnr2y"]
 a = Vector2(6, -7)
 b = Vector2(-6, 6)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("visibleOnScreen")]
 gravity_scale = 0.0
 script = ExtResource("1_iptn0")
+visibleOnScreen = NodePath("VisibleOnScreenNotifier2D")
 
 [node name="ArmaEnemigo" type="Sprite2D" parent="."]
 position = Vector2(1, -1)
@@ -17,3 +18,5 @@ texture = ExtResource("1_5dgrw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("SegmentShape2D_mnr2y")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
