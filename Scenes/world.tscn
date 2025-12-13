@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://q1ddtxvwwo27"]
+[gd_scene load_steps=6 format=4 uid="uid://q1ddtxvwwo27"]
 
-[ext_resource type="Script" uid="uid://blfy5gcehu22b" path="res://Scripts/enemy.gd" id="1_8j60k"]
 [ext_resource type="PackedScene" uid="uid://c5gycfs804qnd" path="res://Scenes/player.tscn" id="1_go701"]
 [ext_resource type="Texture2D" uid="uid://je6105cw5pvl" path="res://Art/fantasy_ [version 2.0]/swamp_/swamp_.png" id="2_5a7ea"]
-[ext_resource type="PackedScene" uid="uid://cge3itqn7n7oq" path="res://Scenes/enemy.tscn" id="4_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://6p5mye1hxk6n" path="res://Scenes/enemy.tscn" id="4_fo5ed"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8j60k"]
 texture = ExtResource("2_5a7ea")
@@ -138,7 +137,7 @@ position = Vector2(-23, 215)
 
 [node name="Enemy" parent="." instance=ExtResource("4_fo5ed")]
 position = Vector2(282, 218)
-script = ExtResource("1_8j60k")
+proyectil = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(131, 207)

@@ -1,12 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://c5gycfs804qnd"]
+[gd_scene load_steps=33 format=3 uid="uid://c5gycfs804qnd"]
 
 [ext_resource type="Script" uid="uid://chw71ey5076fn" path="res://Scripts/player.gd" id="1_vgqql"]
 [ext_resource type="Texture2D" uid="uid://d1einhxano7ub" path="res://Art/Soldier/Soldier-Hurt.png" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://cyo2dphptir2q" path="res://Art/Soldier/Soldier-Attack01.png" id="2_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://dxp4kkvy37aln" path="res://Art/Soldier/Soldier-Idle.png" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://djgetitjm2fu4" path="res://Art/Soldier/Soldier-Walk.png" id="4_3smsa"]
-[ext_resource type="PackedScene" uid="uid://hkn3r3lxoiyc" path="res://Scenes/health_component.tscn" id="6_3smsa"]
-[ext_resource type="PackedScene" uid="uid://djccaiatvrquv" path="res://Scenes/hitbox_component.tscn" id="7_8erm5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ek2"]
 size = Vector2(13, 17)
@@ -213,14 +211,9 @@ script = ExtResource("1_vgqql")
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_f1ek2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["player"]]
 sprite_frames = SubResource("SpriteFrames_0gysh")
-animation = &"attack"
+animation = &"idle"
 
-[node name="HealthComponent" parent="." instance=ExtResource("6_3smsa")]
-
-[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_8erm5")]
-health_component = NodePath("../HealthComponent")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_tx1dd")
