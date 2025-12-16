@@ -7,16 +7,28 @@
 a = Vector2(6, -7)
 b = Vector2(-6, 6)
 
-[node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("visibleOnScreen")]
+[node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("visibleOnScreen", "zona")]
+collision_layer = 8
+collision_mask = 3
 gravity_scale = 0.0
 script = ExtResource("1_iptn0")
 visibleOnScreen = NodePath("VisibleOnScreenNotifier2D")
+zona = NodePath("Area")
 
 [node name="ArmaEnemigo" type="Sprite2D" parent="."]
 position = Vector2(1, -1)
 texture = ExtResource("1_5dgrw")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("SegmentShape2D_mnr2y")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="Area" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 3
+
+[node name="AreaCollider" type="CollisionShape2D" parent="Area"]
+shape = SubResource("SegmentShape2D_mnr2y")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]

@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://q1ddtxvwwo27"]
+[gd_scene load_steps=9 format=4 uid="uid://q1ddtxvwwo27"]
 
 [ext_resource type="PackedScene" uid="uid://c5gycfs804qnd" path="res://Scenes/player.tscn" id="1_go701"]
 [ext_resource type="Texture2D" uid="uid://je6105cw5pvl" path="res://Art/fantasy_ [version 2.0]/swamp_/swamp_.png" id="2_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://d1mugp3arltxq" path="res://Scenes/mushroom_enemy.tscn" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://6p5mye1hxk6n" path="res://Scenes/enemy.tscn" id="4_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://nintahxjf5b2" path="res://Scenes/proyectil.tscn" id="5_fo5ed"]
+[ext_resource type="Script" uid="uid://bgokkph2yv3tr" path="res://Scripts/area.gd" id="6_5ukr8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8j60k"]
 texture = ExtResource("2_5a7ea")
@@ -141,3 +144,13 @@ position = Vector2(282, 218)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(131, 207)
 zoom = Vector2(3, 3)
+
+[node name="MushEnemy" parent="." instance=ExtResource("4_8j60k")]
+position = Vector2(230, 144)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("5_fo5ed")]
+
+[node name="Area" parent="RigidBody2D" index="3"]
+script = ExtResource("6_5ukr8")
+
+[editable path="RigidBody2D"]

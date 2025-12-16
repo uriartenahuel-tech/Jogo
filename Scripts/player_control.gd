@@ -43,7 +43,7 @@ func _process(_delta):
 			if player.current_animation() == "attack" and player.is_animation_finished():
 				current_state = STATE.WALK if moving else STATE.IDLE
 			pass
-		STATE.DEATH:
+		STATE.DEATH:  
 			pass
 		STATE.HURT:
 			pass

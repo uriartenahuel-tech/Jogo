@@ -20,4 +20,4 @@ func current_animation() -> String:
 	return anim.animation
 
 func is_animation_finished() -> bool:
-	return anim.frame == anim.sprite_frames.get_frame_count(anim.animation) - 1 and !anim.is_playing()
+	return anim.frame == anim.sprite_frames.get_frame_count(anim.animation) - 1 
